@@ -7,7 +7,7 @@ from ....models.coworking import RoomDetails
 from ....models.coworking.room_details import ExtendedRoomDetails
 from ..reset_table_id_seq import reset_table_id_seq
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

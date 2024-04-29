@@ -12,7 +12,7 @@ from ...services import (
     RoomViewService
 )
 
-__authors__ = ["Kris Jordan", "Ajay Gandecha"]
+__authors__ = ["Sameera & Dharshini", "Ajay Gandecha"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

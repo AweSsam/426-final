@@ -6,7 +6,7 @@ Importantly, it includes a room's seats, if seats are reservable as in the XL co
 from .room import Room
 from .seat import Seat
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

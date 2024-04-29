@@ -12,7 +12,7 @@
  * an implemented method's operation, and then **be sure to call notify()* so that dependent
  * subscribers to this object (typically views/UI) are updated to reflect.
  *
- * @author Kris Jordan <kris@cs.unc.edu>
+ * @author Sameera & Dharshini <kris@cs.unc.edu>
  */
 
 import { Observable, ReplaySubject, Subject } from 'rxjs';

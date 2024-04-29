@@ -11,7 +11,7 @@ from ... import entities
 from ...test.services import role_data, user_data, permission_data
 from ...test.services.organization import organization_demo_data
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

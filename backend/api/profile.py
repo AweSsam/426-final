@@ -7,7 +7,7 @@ from .authentication import authenticated_pid
 from ..services import UserService
 from ..models import UserDetails, User, UnregisteredUser, ProfileForm
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

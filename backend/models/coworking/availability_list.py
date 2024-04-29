@@ -7,7 +7,7 @@ from datetime import timedelta
 from pydantic import BaseModel, field_validator
 from .time_range import TimeRange
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

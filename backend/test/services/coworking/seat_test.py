@@ -13,7 +13,7 @@ from .seat_data import fake_data_fixture as insert_seat_fake_data
 # Import the fake model data in a namespace for test assertions
 from . import seat_data
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

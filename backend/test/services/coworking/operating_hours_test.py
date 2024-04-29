@@ -13,7 +13,7 @@ from .operating_hours_data import fake_data_fixture
 # Import the fake model data in a namespace for test assertions
 from . import operating_hours_data
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

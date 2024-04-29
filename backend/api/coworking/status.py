@@ -8,7 +8,7 @@ from ...services.coworking import StatusService
 from ...models import User
 from ...models.coworking import Status
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

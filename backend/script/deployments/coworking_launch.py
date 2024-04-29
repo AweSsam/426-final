@@ -3,7 +3,7 @@
 This is quick and dirty for getting some desk data loaded into the system.
 """
 
-__author__ = "Kris Jordan <kris@cs.unc.edu>"
+__author__ = "Sameera & Dharshini <kris@cs.unc.edu>"
 
 
 import sys

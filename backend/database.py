@@ -4,7 +4,7 @@ import sqlalchemy
 from sqlalchemy.orm import Session
 from .env import getenv
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

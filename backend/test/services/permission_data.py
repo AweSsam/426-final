@@ -9,7 +9,7 @@ from ...models.permission import Permission
 from . import role_data
 from .reset_table_id_seq import reset_table_id_seq
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

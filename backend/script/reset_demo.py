@@ -24,7 +24,7 @@ from ..test.services.event import event_demo_data
 from ..test.services.coworking import room_data, seat_data, operating_hours_data, time
 from ..test.services.coworking.reservation import reservation_data
 
-__authors__ = ["Kris Jordan", "Ajay Gandecha"]
+__authors__ = ["Sameera & Dharshini", "Ajay Gandecha"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

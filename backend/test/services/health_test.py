@@ -7,7 +7,7 @@ from ...services.health import HealthService
 from datetime import datetime, timezone
 from sqlalchemy.orm import Session
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

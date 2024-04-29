@@ -7,7 +7,7 @@ from ...models.coworking.seat_details import SeatDetails
 from ...models.coworking.seat import SeatIdentity, Seat
 from typing import Self
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

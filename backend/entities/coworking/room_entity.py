@@ -7,7 +7,7 @@ from ...models.coworking import Room, RoomDetails
 from ...models.coworking.room_details import ExtendedRoomDetails
 from typing import Self
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

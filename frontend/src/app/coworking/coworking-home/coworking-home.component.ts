@@ -2,7 +2,7 @@
  * The Coworking Component serves as the hub for students to create reservations
  * for tables, rooms, and equipment from the CSXL.
  *
- * @author Kris Jordan, Ajay Gandecha
+ * @author Sameera & Dharshini, Ajay Gandecha
  * @copyright 2023
  * @license MIT
  */

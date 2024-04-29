@@ -21,6 +21,6 @@ from .user_role_table import user_role_table
 from .organization_entity import OrganizationEntity
 from .event_entity import EventEntity
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"

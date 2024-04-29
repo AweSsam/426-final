@@ -13,7 +13,7 @@ from ... import entities
 POSTGRES_DATABASE = f'{getenv("POSTGRES_DATABASE")}_test'
 POSTGRES_USER = getenv("POSTGRES_USER")
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

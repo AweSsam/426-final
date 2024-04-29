@@ -17,7 +17,7 @@ from ....models.coworking import OperatingHours
 from ..reset_table_id_seq import reset_table_id_seq
 from .time import *
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

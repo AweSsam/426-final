@@ -11,6 +11,6 @@ from .organization import Organization
 from .event import Event
 from .event_details import EventDetails
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"

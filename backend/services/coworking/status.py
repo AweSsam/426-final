@@ -11,7 +11,7 @@ from ...models.coworking import Status, TimeRange
 from ...models import User
 from .policy import PolicyService
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

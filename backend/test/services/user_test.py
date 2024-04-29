@@ -17,7 +17,7 @@ from .permission_data import (
     ambassador_permission_coworking_reservation,
 )
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

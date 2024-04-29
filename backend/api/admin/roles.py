@@ -8,7 +8,7 @@ from ...models import User, Role, RoleDetails, Permission
 from ..authentication import registered_user
 
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

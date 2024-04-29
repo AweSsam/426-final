@@ -15,7 +15,7 @@ from ..models import User, Permission, Role, RoleDetails
 from ..entities import UserEntity, PermissionEntity, RoleEntity
 from ..services.exceptions import UserPermissionException
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 

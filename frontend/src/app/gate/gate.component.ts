@@ -3,7 +3,7 @@
  * not registered, we take them to the registration page. Otherwise, we attempt to take them to the
  * URL they were accessing when required to authenticated. Otherwise, we redirect them home.
  *
- * @author Kris Jordan
+ * @author Sameera & Dharshini
  * @copyright 2023
  * @license MIT
  */

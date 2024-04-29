@@ -8,7 +8,7 @@ from .user_entity import UserEntity
 from .role_entity import RoleEntity
 from ..models import Permission
 
-__authors__ = ["Kris Jordan"]
+__authors__ = ["Sameera & Dharshini"]
 __copyright__ = "Copyright 2023"
 __license__ = "MIT"
 
