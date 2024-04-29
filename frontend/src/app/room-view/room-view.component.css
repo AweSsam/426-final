@@ -1,0 +1,123 @@
+body {
+  font-family: 'Arial', sans-serif;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #333;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form-container mat-form-field,
+.checkbox-group mat-checkbox {
+  margin: 10px 10px 10px 10px;
+}
+
+.forms-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.forms-container form {
+  flex: 1 1 auto;
+  margin: 10px;
+}
+
+@media (max-width: 768px) {
+  .forms-container form {
+    flex: 0 0 100%;
+  }
+}
+
+.room-container {
+  margin-bottom: 20px;
+}
+
+.grid-container {
+  display: grid;
+  gap: 16px; /* Adjust this value as needed */
+  padding: 16px; /* Adjust this value as needed */
+}
+
+.seat-icon {
+  width: 50px; /* Set the width of the seat */
+  height: 50px; /* Set the height of the seat */
+  /* Other styles as necessary */
+}
+
+
+.grid-container {
+  display: grid;
+  /* grid-template-columns: repeat(10, 50px); /* Fixed number of columns */
+  /* grid-template-rows: repeat(10, 50px); Assuming a max of 10 rows */
+  gap: 5px; /* Smaller gap for tighter grid */
+  justify-content: center; /* Center the grid horizontally */
+  align-content: end; /* Align the grid to the bottom of the container */
+  padding: 10px;
+  background-color: #6f6e6e;
+}
+
+.seat-icon {
+  position: relative;
+  width: 75px; /* Width of the seat */
+  height: 75px; /* Height of the seat */
+  background-color: #cdc8c8; /* Seat background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #676767;
+}
+
+/* Other styles remain the same */
+
+.section-title {
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+  text-align: center; /* Center the section title */
+}
+
+.button-container {
+  margin-top: 20px;
+  text-align: center; /* Center the button */
+}
+
+.dog-photo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+  margin-top: 20px;
+}
+
+.dog-photo {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center the image */
+}
+
+.dog-photo img {
+  max-width: 100%; /* Ensure image fits within container */
+  height: auto;
+  border-radius: 8px;
+}

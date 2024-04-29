@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Room and Seat Management</title>
+    <!-- Add Angular Material styles -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/@angular/material/prebuilt-themes/indigo-pink.css"
+      rel="stylesheet" />
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 50px;
+        padding: 0 50px; /* Add horizontal padding */
+        background-image: url(../../assets/enclosure.png);
+        background-size: cover;
+      }
+
+      .room-container {
+        margin: 0 auto; /* Center the room container */
+        max-width: 1200px; /* Adjust the max-width as per your layout requirement */
+      }
+
+      .title {
+        text-align: center; /* Center align the title */
+        margin-top: 20px;
+      }
+
+      .seat-icon {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background-color: transparent;
+        border: none;
+      }
+
+      .seat-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .seat-id {
+        position: absolute;
+        bottom: 25%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: black;
+        font-weight: bold;
+      }
+
+      .room-dropdown {
+        margin-bottom: 20px;
+        margin-top: 20px;
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <mat-form-field class="room-dropdown">
+      <mat-label>View Enclosure:</mat-label>
+      <mat-select
+        [(ngModel)]="selectedRoomId"
+        (selectionChange)="onRoomSelected()">
+        <mat-option *ngFor="let room of rooms$ | async" [value]="room.id">
+          {{ room.nickname }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <ng-container *ngIf="currentRoom">
+      <div class="room-container">
+        <h3 style="margin-left: 20px; color: black">
+          {{ currentRoom.nickname }} (Enclosure {{ currentRoom.id }})
+        </h3>
+        <ng-container *ngIf="currentRoom.seats && currentRoom.seats.length > 0">
+          <div
+            class="grid-container"
+            [style.grid-template-columns]="
+              'repeat(' + (currentRoom.gridWidth || 10) + ', 90px)'
+            "
+            [style.grid-template-rows]="
+              'repeat(' + (currentRoom.gridHeight || 10) + ', 90px)'
+            ">
+            <div
+              *ngFor="let seat of currentRoom.seats; let i = index"
+              class="seat-icon"
+              [style.gridColumn]="seat.x + 1"
+              [style.gridRow]="seat.y + 1"
+              (click)="showSeatDetails(seat)">
+              <img
+                class="seat-image"
+                src="../../assets/puppy.png"
+                alt="Puppy Image" />
+              <div class="seat-id">{{ seat.shorthand }}</div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </ng-container>
+
+    <h2 style="margin-left: 20px; color: black">Dogs</h2>
+    <mat-table [dataSource]="seats$" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+        <mat-cell *matCellDef="let seat"> {{ seat.id }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <mat-header-cell *matHeaderCellDef> Breed </mat-header-cell>
+        <mat-cell *matCellDef="let seat"> {{ seat.title }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="shorthand">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell *matCellDef="let seat"> {{ seat.shorthand }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="reservable">
+        <mat-header-cell *matHeaderCellDef> Available </mat-header-cell>
+        <mat-cell *matCellDef="let seat">
+          {{ seat.reservable ? 'Yes' : 'No' }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="has_monitor">
+        <mat-header-cell *matHeaderCellDef> Vaccinated </mat-header-cell>
+        <mat-cell *matCellDef="let seat">
+          {{ seat.has_monitor ? 'Yes' : 'No' }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="sit_stand">
+        <mat-header-cell *matHeaderCellDef> Trained </mat-header-cell>
+        <mat-cell *matCellDef="let seat">
+          {{ seat.sit_stand ? 'Yes' : 'No' }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="x">
+        <mat-header-cell *matHeaderCellDef> X Position </mat-header-cell>
+        <mat-cell *matCellDef="let seat"> {{ seat.x }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="y">
+        <mat-header-cell *matHeaderCellDef> Y Position </mat-header-cell>
+        <mat-cell *matCellDef="let seat"> {{ seat.y }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="room_nickname">
+        <mat-header-cell *matHeaderCellDef>
+          Enclosure Nickname
+        </mat-header-cell>
+        <mat-cell *matCellDef="let seat"> {{ seat.room.nickname }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="room_id">
+        <mat-header-cell *matHeaderCellDef> Enclosure ID </mat-header-cell>
+        <mat-cell *matCellDef="let seat"> {{ seat.room.id }} </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedSeatColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedSeatColumns"></mat-row>
+    </mat-table>
+
+    <h2 style="margin-left: 20px; color: black">Enclosures</h2>
+    <mat-table [dataSource]="rooms$" class="mat-elevation-z8">
+      <ng-container matColumnDef="building">
+        <mat-header-cell *matHeaderCellDef> Building </mat-header-cell>
+        <mat-cell *matCellDef="let room"> {{ room.building }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef> Enclosure ID </mat-header-cell>
+        <mat-cell *matCellDef="let room"> {{ room.id }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="room">
+        <mat-header-cell *matHeaderCellDef> Enclosure Number </mat-header-cell>
+        <mat-cell *matCellDef="let room"> {{ room.room }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="nickname">
+        <mat-header-cell *matHeaderCellDef> Nickname </mat-header-cell>
+        <mat-cell *matCellDef="let room"> {{ room.nickname }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="capacity">
+        <mat-header-cell *matHeaderCellDef> Capacity </mat-header-cell>
+        <mat-cell *matCellDef="let room"> {{ room.capacity }} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="seats">
+        <mat-header-cell *matHeaderCellDef> Dogs </mat-header-cell>
+        <mat-cell *matCellDef="let room">
+          <span *ngFor="let seat of room.seats; let i = index">
+            {{ seat.id }}<span *ngIf="i < room.seats.length - 1">, </span>
+          </span>
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="reservable">
+        <mat-header-cell *matHeaderCellDef> Reservable </mat-header-cell>
+        <mat-cell *matCellDef="let room">
+          {{ room.reservable ? 'Yes' : 'No' }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="whiteboard">
+        <mat-header-cell *matHeaderCellDef> Toys </mat-header-cell>
+        <mat-cell *matCellDef="let room">
+          {{ room.has_whiteboard ? 'Yes' : 'No' }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="projector">
+        <mat-header-cell *matHeaderCellDef> Pillows </mat-header-cell>
+        <mat-cell *matCellDef="let room">
+          {{ room.has_projector ? 'Yes' : 'No' }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="monitor">
+        <mat-header-cell *matHeaderCellDef> Visitor Friendly </mat-header-cell>
+        <mat-cell *matCellDef="let room">
+          {{ room.has_monitor ? 'Yes' : 'No' }}
+        </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedRoomColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedRoomColumns"></mat-row>
+    </mat-table>
+    <br />
+  </body>
+</html>
+
+<h2 class="section-title">Some of our dogs that have been adopted:</h2>
+
+<div class="button-container">
+  <button mat-raised-button color="#f7c8b8" (click)="loadRandomDogPhoto()">
+    Meet a Dog
+  </button>
+</div>
+
+<div *ngIf="dogPhotoUrl" class="dog-photo-container">
+  <div class="dog-photo">
+    <img [src]="dogPhotoUrl" alt="Dog Photo" />
+  </div>
+</div>

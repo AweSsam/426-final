@@ -1,0 +1,37 @@
+<div class="seat-details-container">
+  <h2>Dog Details</h2>
+  <div class="details-row">
+    <span class="details-label">ID:</span>
+    <span class="details-value">{{ data.id }}</span>
+  </div>
+  <div class="details-row">
+    <span class="details-label">Breed:</span>
+    <span class="details-value">{{ data.title }}</span>
+  </div>
+  <div class="details-row">
+    <span class="details-label">Name:</span>
+    <span class="details-value">{{ data.shorthand }}</span>
+  </div>
+  <div class="details-row">
+    <span class="details-label">Available:</span>
+    <span class="details-value">{{ data.reservable ? 'Yes' : 'No' }}</span>
+  </div>
+  <div class="details-row">
+    <span class="details-label">Vaccinated:</span>
+    <span class="details-value">{{ data.has_monitor ? 'Yes' : 'No' }}</span>
+  </div>
+  <div class="details-row">
+    <span class="details-label">Trained:</span>
+    <span class="details-value">{{ data.sit_stand ? 'Yes' : 'No' }}</span>
+  </div>
+  <div class="details-row">
+    <span class="details-label">X Position:</span>
+    <span class="details-value">{{ data.x }}</span>
+  </div>
+  <div class="details-row">
+    <span class="details-label">Y Position:</span>
+    <span class="details-value">{{ data.y }}</span>
+  </div>
+  <button mat-button (click)="closeModal()">Close</button>
+  <br />
+</div>

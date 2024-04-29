@@ -1,0 +1,30 @@
+.seat-details-container {
+  color: white;
+  background-color: #f7c8b8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Ensures the container takes up the full height */
+}
+  
+  h2 {
+    font-size: 1.5em;
+    margin-bottom: 16px;
+  }
+  
+  .details-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+  
+  .details-label {
+    font-weight: bold;
+    margin-right: 8px;
+  }
+  
+  .details-value {
+    flex-grow: 1;
+  }
+  

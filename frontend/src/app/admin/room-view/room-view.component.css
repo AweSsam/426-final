@@ -1,0 +1,11 @@
+.forms-row {
+    display: flex;
+    flex-wrap: wrap; /* Optional, for responsiveness */
+  }
+  
+  .forms-row form {
+    flex: 1 1 50%; /* Each form takes up 50% of the container's width */
+    box-sizing: border-box; /* Include padding and borders in the element's total width and height */
+    padding: 0 10px; /* Optional, for some space between the forms */
+  }
+  
